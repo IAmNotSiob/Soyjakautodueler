@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+soyduel.toml
+*.pid
+*.log
+seen_images_file
+*_seen_images.json
+.venv/
+venv/
