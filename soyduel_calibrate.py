@@ -4,8 +4,8 @@ PIL-based image analysis instead of manual eyeballing. Screenshots the live
 thread's reply form and locates form elements by pixel color.
 
 Usage:
-    python3 soyduel_calibrate.py 58.20.117.40 5999
-    python3 soyduel_calibrate.py 58.20.117.40 5999 --password foo --write
+    python3 soyduel_calibrate.py 
+    python3 soyduel_calibrate.py  --password foo --write
 
 Without --write, it just prints the detected profile. With --write, it saves
 the profile into soyduel.toml under [remote_browser.vnc_fallback.profiles.WxH].
