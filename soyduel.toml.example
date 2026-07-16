@@ -18,16 +18,7 @@ display = ":11"
 pid_file = "/tmp/soyduel.pid"
 log_file = "/tmp/soyduel_loop.log"
 
-# EXPERIMENTAL. Use this when Firefox + Xvfb + a VNC server are already running
-# on a DIFFERENT machine (e.g. this box can't host a display/VNC itself), and
-# geckodriver on that machine is listening for WebDriver connections. Instead of
-# launching a local browser, we drive that remote Firefox over the network.
-# You still connect your VNC client directly to host:vnc_port to watch it.
-#
-# CAVEAT: the McChallenge/McCaptcha exemption was granted for one specific IP.
-# Posting from a different host's IP is NOT covered by that exemption unless
-# admins separately whitelisted it too -- this script has no captcha/PoW
-# solving logic, so an un-exempted IP will likely just fail to post.
+
 [remote_browser]
 enabled = true
 webdriver_url = ""
@@ -35,17 +26,5 @@ vnc_host = "REPLACE_WITH_VNC_HOST"
 vnc_port = 5900
 vnc_password = ""
 
-# Only used when webdriver_url is blank. EXTREMELY EXPERIMENTAL: there's no DOM
-# access in this mode, so the script just clicks/types at fixed screen
-# coordinates, scaled as fractions of resolution. Actual resolution is
-# auto-detected per-connection (via a screenshot) and matched to the profile
-# below with the same "WIDTHxHEIGHT" key. Generate/update a profile with
-# soyduel_calibrate.py <host> <port> --write -- it screenshots the real,
-# live target thread's reply form (same GET the bot already makes) and
-# locates the controls via pixel analysis, rather than requiring manual
-# measurement. Re-run it whenever the remote window/resolution changes.
-#
-# Leave this section empty to start -- profiles get added automatically
-# (soyduel.py auto-calibrates on an unrecognized resolution), or generate one
-# yourself with: python3 soyduel_calibrate.py <host> <port> --write
+
 [remote_browser.vnc_fallback]
